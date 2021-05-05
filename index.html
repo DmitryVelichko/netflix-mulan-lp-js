@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" />
+    <title>Netflix LP</title>
+</head>
+<body>
+    <header>
+        <a href="#" class='logo'><img src="images/logo.png" alt="netflix"></a>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">My List</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </header>
+    <div class="banner">
+        <img src="images/bg.jpg" class="bg" alt="Mulan with sword">
+        <div class="content">
+            <img src="images/name.png" class="movieTitle" alt="Mulan">
+            <h4>
+                <span>2020</span>
+                <span><i>12+</i></span>
+                <span>1h 55min</span>
+                <span>Action</span>
+            </h4>
+            <p>Recasting the plot of Disney's 1998 animated tale, this live-action drama charts the path of a heroic young woman who
+            disguises her gender to take her ailing father's place in the emperor of China's army.</p>
+            <div class="buttons">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Play</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> My List</a>
+            </div>
+        </div>
+        <a class="play" onclick="toggleVideo();"><img src="images/play.png" alt="play">Watch Trailer</a>
+    </div>
+    <div class="trailer">
+        <video src="images/mulan-trailer.mp4" controls="true"></video>
+        <img src="images/close.png" class='close' alt="close" onclick="toggleVideo();">
+    </div>
+
+    <script>
+        function toggleVideo() {
+            const trailer = document.querySelector('.trailer');
+            const video = document.querySelector('video');
+            trailer.classList.toggle('active');
+            video.currentTime = 0;
+            video.pause();
+        }       
+    </script>
+
+</body>
+</html>
